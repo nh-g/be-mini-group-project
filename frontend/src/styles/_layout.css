@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'elasis-rg';
+    src:url('../assets/fonts/elasis/elasis-rg.ttf.woff') format('woff'),
+        url('../assets/fonts/elasis/elasis-rg.ttf.svg#elasis-rg') format('svg'),
+        url('../assets/fonts/elasis/elasis-rg.ttf.eot')format('eot');
+       
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.logo{
+   width: 100%;
+   text-align: center;
+}
+
+.subtitle{
+
+    font-family: 'elasis-rg';
+    text-align: center;
+    font-size: 20px;
+   color: #D5B761;
+}

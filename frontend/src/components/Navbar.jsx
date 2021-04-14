@@ -5,7 +5,7 @@ export default function Navbar({ onLogout }) {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <Link className="navbar-brand" to="/">
-        SDA starter
+        Dumpty
       </Link>
       <button
         className="navbar-toggler"
