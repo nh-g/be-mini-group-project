@@ -1,36 +1,35 @@
 // NPM Packages
 import React from "react";
 
+// Project files
+import logo from "../../assets/dumpty.svg";
+import truck from "../../assets/truck.png";
+
 export default function HomePage() {
   return (
     <div className="card">
       <div className="card-body">
-        <h4 className="card-title">Dumpty</h4>
+        
+        <img className="logo"src={logo}/>
         <p>
-          This starter template is based on Spring, PostgreSQL, React, React
-          router and Axios. Check the following links for documentation and
-          guides:
+         <em>Dumpty</em> is a luxury service of Garbage Collection.<br/>
+         Welcome to the world of upCycling.<br/>
+         Our garbage officers are the best in the world, they are all diplomed from the High University of Uppsala.
+
+
         </p>
         <ul>
           <li>
-            <a href="https://spring.io/projects/spring-boot">Spring</a>
+            <a target="blank" href="https://en.wikipedia.org/wiki/Pricing">Pricing</a>
           </li>
           <li>
-            <a href="https://www.postgresql.org">PostgreSQL</a>
+            <a target="blank" href="https://en.wikipedia.org/wiki/Reference">References </a>
           </li>
-          <li>
-            <a href="https://reactjs.org">React</a>
-          </li>
-          <li>
-            <a href="https://reacttraining.com/react-router/web/guides/quick-start">
-              React Router
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/axios/axios">Axios</a>
-          </li>
+       
         </ul>
       </div>
+      
+      <img className="illustration"src={truck}/>
     </div>
   );
 }

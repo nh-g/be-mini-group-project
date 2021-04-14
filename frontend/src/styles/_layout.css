@@ -1,23 +1,79 @@
+/* font imports */
+
 @font-face {
-    font-family: 'elasis-rg';
-    src:url('../assets/fonts/elasis/elasis-rg.ttf.woff') format('woff'),
-        url('../assets/fonts/elasis/elasis-rg.ttf.svg#elasis-rg') format('svg'),
-        url('../assets/fonts/elasis/elasis-rg.ttf.eot')format('eot');
-       
-    font-weight: normal;
-    font-style: normal;
+  font-family: "elasis-rg";
+  src: url("../assets/fonts/elasis/elasis-rg.ttf.woff") format("woff"),
+    url("../assets/fonts/elasis/elasis-rg.ttf.svg#elasis-rg") format("svg"),
+    url("../assets/fonts/elasis/elasis-rg.ttf.eot") format("eot");
+
+  font-weight: normal;
+  font-style: normal;
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;300;400;500;600;700&display=swap");
 
-.logo{
-   width: 100%;
-   text-align: center;
+/* AuthPage.jsx -  left content */
+.col-md-6 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.subtitle{
+.logo {
+  align-self: center;
+  width: 80%;
+}
+.subtitle {
+  font-family: "elasis-rg";
+  text-align: center;
+  font-size: 20px;
+  color: #d5b761;
+}
 
-    font-family: 'elasis-rg';
-    text-align: center;
-    font-size: 20px;
-   color: #D5B761;
+/* HomePage.jsx card */
+
+.illustration {
+  align-self: center;
+  width: 40%;
+}
+.card {
+  background-color: rgba(255, 255, 255, 0, 1);
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+.card-body p {
+  text-align: center;
+  width: 60%;
+  word-wrap: break-word;
+}
+.card-body p em {
+  font-weight: 600;
+  font-style: normal;
+}
+.card-body ul {
+  display: flex;
+  justify-content: center;
+}
+
+.card-body ul li {
+  margin: 0px 10px;
+
+  background-color: #513c65;
+  list-style-type: none;
+  border-radius: 20px;
+}
+
+.card-body ul li a {
+  color: #c5b381;
+  margin: 2px 15px;
+}
+.card-body ul li :hover {
+  color: #f5b60b;
+  text-decoration: none;
 }

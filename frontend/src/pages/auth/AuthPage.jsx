@@ -30,7 +30,7 @@ export default function LoginPage() {
           <div className="col-md-6 " style={{ color: "white" }}>
             
             <img className="logo"src={logo}/>
-            <p className ="subtitle">Trash still live</p>
+            <p className ="subtitle">Because trash still live</p>
           </div>
 
           <div className="col-md-6">

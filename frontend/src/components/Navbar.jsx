@@ -1,11 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+// Project files
+import logo from "../assets/dumpty.svg";
+
 export default function Navbar({ onLogout }) {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <Link className="navbar-brand" to="/">
-        Dumpty
+      <img className="logo"src={logo}/>
       </Link>
       <button
         className="navbar-toggler"
