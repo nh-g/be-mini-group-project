@@ -37,7 +37,7 @@ public class PostController {
     /* return a specific post based on the provided id */
     @GetMapping("/{id}")
     public ResponseEntity<Post> getPostById(@PathVariable Long id){
-        Post post = postRepository.findById(id).orElseThrow(ResourceNotFoundException::new);
+        Post post = postService.getPostById(id);
         return ResponseEntity.ok(post);
     }
 
