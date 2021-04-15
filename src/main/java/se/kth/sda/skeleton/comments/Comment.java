@@ -41,4 +41,12 @@ public class Comment {
     public void setBody(String body) {
         this.body = body;
     }
+
+    public Post getPost() {
+        return post;
+    }
+
+    public void setPost(Post post) {
+        this.post = post;
+    }
 }
