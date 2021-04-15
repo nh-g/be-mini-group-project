@@ -31,7 +31,7 @@ public class PostController {
     /* return all posts*/
     @GetMapping("/")
     public ResponseEntity <List<Post>>listAllPost() {
-            return ResponseEntity.ok(postRepository.findAll());
+        return ResponseEntity.ok(postService.listAllPosts());
     }
 
     /* return a specific post based on the provided id */

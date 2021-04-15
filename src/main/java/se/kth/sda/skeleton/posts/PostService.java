@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import se.kth.sda.skeleton.posts.exeption.ResourceNotFoundException;
 
+import java.util.List;
+
 @Service
 public class PostService {
 
@@ -34,5 +36,10 @@ public class PostService {
     public Post getPostById(Long id){
         Post post = postRepository.findById(id).orElseThrow(ResourceNotFoundException::new);
         return post;
+    }
+
+    public List<Post> listAllPosts() {
+        List<Post> posts = postRepository.findAll();
+        return posts;
     }
 }
