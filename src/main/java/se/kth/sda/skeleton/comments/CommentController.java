@@ -44,5 +44,13 @@ public class CommentController {
         return ResponseEntity.ok(commentRepository.save(updatedComment));
     }
 
+    @DeleteMapping("comments/{commentId}")
+    public ResponseEntity<Comment> delete(@PathVariable Long commentId) {
+        Comment comment = commentRepository.findById(commentId).orElseThrow(ResourceNotFoundException::new);
+        commentRepository.delete(comment);
+        return ResponseEntity.ok(comment);
+    }
+
+
 
 }
