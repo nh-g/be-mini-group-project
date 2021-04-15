@@ -13,10 +13,12 @@ import java.util.List;
 @RestController
 public class PostController {
     PostRepository postRepository;
+    PostService postService;
 
     @Autowired
-    public PostController(PostRepository postRepository) {
+    public PostController(PostRepository postRepository, PostService postService) {
         this.postRepository = postRepository;
+        this.postService = postService;
     }
     /* create a new post */
     @PostMapping("/")
@@ -41,9 +43,7 @@ public class PostController {
     /* return should update the post by id */
     @PutMapping("/{id}")
     public ResponseEntity<Post> updatePostById(@PathVariable Long id, @RequestBody Post updatePostById){
-        postRepository.findById(id).orElseThrow(ResourceNotFoundException::new);
-        updatePostById.setId(id);
-        Post post = postRepository.save(updatePostById);
+        Post post = postService.updatePost(id, updatePostById);
         return ResponseEntity.ok(post);
     }
 
