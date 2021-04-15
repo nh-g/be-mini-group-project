@@ -30,7 +30,7 @@ public class PostController {
 
     /* return all posts*/
     @GetMapping("/")
-    public ResponseEntity <List<Post>>listAllPost() {
+    public ResponseEntity <List<Post>>listAllPosts() {
         return ResponseEntity.ok(postService.listAllPosts());
     }
 
@@ -43,7 +43,7 @@ public class PostController {
 
     /* return should update the post by id */
     @PutMapping("/{id}")
-    public ResponseEntity<Post> updatePostById(@PathVariable Long id, @RequestBody Post updatePostById){
+    public ResponseEntity<Post> updatePost(@PathVariable Long id, @RequestBody Post updatePostById){
         Post post = postService.updatePost(id, updatePostById);
         return ResponseEntity.ok(post);
     }
@@ -51,7 +51,7 @@ public class PostController {
     /* should delete the post by id */
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deletePostById(@PathVariable Long id){
+    public void deletePost(@PathVariable Long id){
         postService.deletePost(id);
     }
 }
