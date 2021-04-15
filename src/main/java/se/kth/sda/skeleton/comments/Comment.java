@@ -1,4 +1,5 @@
 package se.kth.sda.skeleton.comments;
+
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
@@ -25,6 +26,7 @@ public class Comment {
     @JoinColumn(nullable = false)
     @NotNull
     private Post post;
+
 
     public Long getId() {
         return id;

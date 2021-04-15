@@ -16,11 +16,14 @@ public class CommentService {
         this.commentRepository = commentRepository;
     }
 
-
-    public Comment findComment(Long commentId){
-
-        Comment comment = commentRepository.findById(commentId).orElseThrow(ResourceNotFoundException::new);
-        return comment;
+    /**
+     * find a comment by his ID
+     *
+     * @param commentId: the id of the comment to be found
+     * @return the comment if exists, throw ResourceNotFoundException if comment is not found
+     */
+    public Comment findComment(Long commentId) {
+        return commentRepository.findById(commentId).orElseThrow(ResourceNotFoundException::new);
 
     }
 }
