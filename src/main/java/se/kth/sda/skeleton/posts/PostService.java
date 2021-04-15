@@ -2,7 +2,7 @@ package se.kth.sda.skeleton.posts;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import se.kth.sda.skeleton.posts.exeption.ResourceNotFoundException;
+import se.kth.sda.skeleton.exception.ResourceNotFoundException;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package se.kth.sda.skeleton.posts.exeption;
+package se.kth.sda.skeleton.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
