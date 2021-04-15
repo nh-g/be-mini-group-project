@@ -20,14 +20,14 @@ public class PostController {
         this.postService = postService;
     }
     /* create a new post */
-    @PostMapping("/")
+    @PostMapping("")
     public ResponseEntity<Post> createPost(@Valid @RequestBody Post post) {
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(postService.createPost(post));
     }
 
     /* return all posts*/
-    @GetMapping("/")
+    @GetMapping("")
     public ResponseEntity <List<Post>>listAllPosts() {
         return ResponseEntity.ok(postService.listAllPosts());
     }
