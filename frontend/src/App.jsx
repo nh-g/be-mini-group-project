@@ -9,7 +9,7 @@ import AuthPage from "./pages/auth/AuthPage";
 import HomePage from "./pages/home/HomePage";
 import PostsPage from "./pages/posts/PostsPage";
 import ChatPage from "./pages/chat/ChatPage";
-import "./App.css";
+import "./styles/App.css";
 
 export default function App() {
   // State

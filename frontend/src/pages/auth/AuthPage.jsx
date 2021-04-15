@@ -5,6 +5,7 @@ import React from "react";
 import LoginForm from "./LoginForm";
 import RegisterForm from "./RegisterForm";
 import Auth from "../../services/Auth";
+import logo from "../../assets/dumpty.svg";
 
 export default function LoginPage() {
   // Methods
@@ -27,8 +28,9 @@ export default function LoginPage() {
       <div className="container">
         <div className="row mt-4">
           <div className="col-md-6 " style={{ color: "white" }}>
-            <h1>SDA</h1>
-            <p>Starter template</p>
+            
+            <img className="logo"src={logo}/>
+            <p className ="subtitle">Because trash still live</p>
           </div>
 
           <div className="col-md-6">

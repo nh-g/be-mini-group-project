@@ -1,36 +1,36 @@
 // NPM Packages
 import React from "react";
 
+// Project files
+import logo from "../../assets/dumpty.svg";
+import truck from "../../assets/truck.png";
+
 export default function HomePage() {
   return (
     <div className="card">
       <div className="card-body">
-        <h4 className="card-title">SDA starter template</h4>
+        
+        <img className="logo"src={logo}/>
         <p>
-          This starter template is based on Spring, PostgreSQL, React, React
-          router and Axios. Check the following links for documentation and
-          guides:
+         Welcome to <em>Dumpty</em> a platform for Garbage trucks true lovers.<br/>
+         Welcome to the world of upCycling.<br/>
+         Here you will find the biggest fanbase .And don't forget : <br/> 
+         <em>In Crap We Trust</em>
+
+
         </p>
         <ul>
           <li>
-            <a href="https://spring.io/projects/spring-boot">Spring</a>
+            <a target="blank" href="https://store.steampowered.com/app/294830/RECYCLE/">Play the Game</a>
           </li>
           <li>
-            <a href="https://www.postgresql.org">PostgreSQL</a>
+            <a target="blank" href="https://en.wikipedia.org/wiki/Reference">References </a>
           </li>
-          <li>
-            <a href="https://reactjs.org">React</a>
-          </li>
-          <li>
-            <a href="https://reacttraining.com/react-router/web/guides/quick-start">
-              React Router
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/axios/axios">Axios</a>
-          </li>
+       
         </ul>
       </div>
+      
+      <img className="illustration"src={truck}/>
     </div>
   );
 }

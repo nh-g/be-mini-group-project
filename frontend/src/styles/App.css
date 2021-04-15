@@ -1,6 +1,9 @@
+@import url("_layout.css"); 
+
+
 body {
   min-height: 100vh;
-  background: linear-gradient(to right, #2c3e50, #3498db);
+  background: linear-gradient(to right, #2c3e50, #513C65);
 }
 
 .App {
