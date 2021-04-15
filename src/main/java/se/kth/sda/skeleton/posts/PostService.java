@@ -2,6 +2,7 @@ package se.kth.sda.skeleton.posts;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import se.kth.sda.skeleton.posts.exeption.ResourceNotFoundException;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,13 +18,13 @@ public class PostService {
     }
 
     public Post updatePost(Long id, Post updatedPost) {
-        postRepository.findById(id);
+        postRepository.findById(id).orElseThrow(ResourceNotFoundException::new);
         updatedPost.setId(id);
         Post post = postRepository.save(updatedPost);
         return post;
     }
 
-    
+    public Post deletePost(Long id) {
 
-
+    }
 }
