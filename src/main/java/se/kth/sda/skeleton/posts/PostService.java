@@ -4,9 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import se.kth.sda.skeleton.posts.exeption.ResourceNotFoundException;
 
-import java.util.List;
-import java.util.Optional;
-
 @Service
 public class PostService {
 
@@ -24,7 +21,8 @@ public class PostService {
         return post;
     }
 
-    public Post deletePost(Long id) {
-
+    public void deletePost(Long id) {
+        Post post = postRepository.findById(id).orElseThrow(ResourceNotFoundException::new);
+        postRepository.delete(post);
     }
 }

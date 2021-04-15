@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import se.kth.sda.skeleton.posts.exeption.*;
+import se.kth.sda.skeleton.posts.PostService;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -49,10 +50,8 @@ public class PostController {
 
     /* should delete the post by id */
     @DeleteMapping("/{id}")
-    public ResponseEntity<Post> deletePostById(@PathVariable Long id){
-        Post post = postRepository.findById(id).orElseThrow(ResourceNotFoundException::new);
-        postRepository.delete(post);
-        return ResponseEntity.ok(post);
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deletePostById(@PathVariable Long id){
+        postService.deletePost(id);
     }
-
 }
