@@ -1,6 +1,7 @@
 package se.kth.sda.skeleton.comments;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import se.kth.sda.skeleton.exception.ResourceNotFoundException;
@@ -23,7 +24,6 @@ public class CommentController {
         this.postRepository = postRepository;
         this.commentService = commentService;
     }
-
 
     /**
      * get all comments related to a specific post by his ID
@@ -48,7 +48,7 @@ public class CommentController {
     public ResponseEntity<Comment> createCommentOnArticle(@PathVariable Long postId, @Valid @RequestBody Comment comment) {
         Post post = postRepository.findById(postId).orElseThrow(ResourceNotFoundException::new);
         comment.setPost(post);
-        return ResponseEntity.ok(commentRepository.save(comment));
+        return ResponseEntity.status(HttpStatus.CREATED).body(commentRepository.save(comment));
     }
 
     /**
@@ -78,6 +78,5 @@ public class CommentController {
         commentRepository.delete(comment);
         return ResponseEntity.ok(comment);
     }
-
 
 }

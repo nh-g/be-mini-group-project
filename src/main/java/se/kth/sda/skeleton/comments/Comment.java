@@ -26,8 +26,7 @@ public class Comment {
     @JoinColumn(nullable = false)
     @NotNull
     private Post post;
-
-
+    
     public Long getId() {
         return id;
     }
