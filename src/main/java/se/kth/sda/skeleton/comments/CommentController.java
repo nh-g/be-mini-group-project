@@ -16,12 +16,17 @@ public class CommentController {
 
     CommentRepository commentRepository;
     PostRepository postRepository;
+    CommentService commentService;
 
     @Autowired
-    public CommentController(CommentRepository commentRepository, PostRepository postRepository) {
+    public CommentController(CommentRepository commentRepository, PostRepository postRepository, CommentService commentService) {
         this.commentRepository = commentRepository;
         this.postRepository = postRepository;
+        this.commentService = commentService;
     }
+
+
+
 
     @GetMapping("/posts/{postId}/comments")
     public ResponseEntity<List<Comment>> listAllComments(@PathVariable Long postId) {
@@ -38,7 +43,7 @@ public class CommentController {
 
     @PutMapping("/comments/{commentId}")
     public ResponseEntity<Comment> updateComment(@PathVariable Long commentId, @RequestBody Comment updatedComment) {
-        Comment comment = commentRepository.findById(commentId).orElseThrow(ResourceNotFoundException::new);
+        Comment comment = commentService.findComment(commentId);
         updatedComment.setId(comment.getId());
         updatedComment.setPost(comment.getPost());
         return ResponseEntity.ok(commentRepository.save(updatedComment));
@@ -46,7 +51,7 @@ public class CommentController {
 
     @DeleteMapping("comments/{commentId}")
     public ResponseEntity<Comment> delete(@PathVariable Long commentId) {
-        Comment comment = commentRepository.findById(commentId).orElseThrow(ResourceNotFoundException::new);
+        Comment comment = commentService.findComment(commentId);
         commentRepository.delete(comment);
         return ResponseEntity.ok(comment);
     }
