@@ -25,7 +25,7 @@ public class PostController {
     @PostMapping("/")
     public ResponseEntity<Post> createPost(@Valid @RequestBody Post post) {
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body(postRepository.save(post));
+                .body(postService.createPost(post));
     }
 
     /* return all posts*/
