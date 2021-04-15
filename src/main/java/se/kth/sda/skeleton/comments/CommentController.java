@@ -36,6 +36,13 @@ public class CommentController {
         return ResponseEntity.ok(commentRepository.save(comment));
     }
 
+    @PutMapping("/comments/{commentId}")
+    public ResponseEntity<Comment> updateComment(@PathVariable Long commentId, @RequestBody Comment updatedComment) {
+        Comment comment = commentRepository.findById(commentId).orElseThrow(ResourceNotFoundException::new);
+        updatedComment.setId(comment.getId());
+        updatedComment.setPost(comment.getPost());
+        return ResponseEntity.ok(commentRepository.save(updatedComment));
+    }
 
 
 }
