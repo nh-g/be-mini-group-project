@@ -7,7 +7,6 @@ import se.kth.sda.skeleton.posts.Post;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
 @Entity
 public class Comment {
@@ -24,7 +23,6 @@ public class Comment {
     @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
     @JsonIdentityReference(alwaysAsId = true)
     @JoinColumn(nullable = false)
-    @NotNull
     private Post post;
     
     public Long getId() {
