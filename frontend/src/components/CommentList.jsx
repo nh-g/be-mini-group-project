@@ -3,14 +3,16 @@ import CommentsAPI from "../api/CommentsAPI";
 import Comment from "./Comment";
 import CommentForm from "./CommentForm";
 
-export default function CommentList(postId) {
+export default function CommentList({postId}) {
+    console.log(postId)
     const [comments, setComments] = useState([])
 
     useEffect(() => {
         CommentsAPI.getAllComments(postId)
-            .then(({ data }) => setComments(data))
+            .then(results=>results.data)
+            .then(( data ) => setComments(data))
             .catch((err) => console.error(err));
-    }, [setComments]);
+    }, [comments]);
 
     const commentsArray = comments.map((comment, index) => (
         <Comment key={index} comment={comment} /> ));
