@@ -11,12 +11,10 @@ import java.util.List;
 @RequestMapping("/posts")
 @RestController
 public class PostController {
-    PostRepository postRepository;
     PostService postService;
 
     @Autowired
-    public PostController(PostRepository postRepository, PostService postService) {
-        this.postRepository = postRepository;
+    public PostController(PostService postService) {
         this.postService = postService;
     }
 
