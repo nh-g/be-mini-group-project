@@ -4,7 +4,6 @@ import Comment from "./Comment";
 import CommentForm from "./CommentForm";
 
 export default function CommentList({postId}) {
-    console.log(postId)
     const [comments, setComments] = useState([])
 
     useEffect(() => {
@@ -16,8 +15,7 @@ export default function CommentList({postId}) {
 
     const commentsArray = comments.map((comment, index) => (
         <Comment key={index} comment={comment} /> ));
-
-
+    
 
 return(
 
