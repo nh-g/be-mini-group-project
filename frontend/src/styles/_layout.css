@@ -12,6 +12,11 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;300;400;500;600;700&display=swap");
 
+hr {
+  height: 2px;
+  color: grey;
+}
+
 /* AuthPage.jsx -  left content */
 .col-md-6 {
   display: flex;
@@ -36,8 +41,14 @@
   align-self: center;
   width: 40%;
 }
-.card {
-  background-color: rgba(255, 255, 255, 0, 1);
+
+.card-content {
+  width: 85%;
+}
+
+.form-control textarea {
+  width: 100%;
+  border-radius: 10px;
 }
 
 .card-body {
@@ -46,10 +57,9 @@
   justify-content: center;
   align-items: center;
   font-family: "Montserrat Alternates", sans-serif;
+  border: none;
 }
 .card-body p {
-  text-align: center;
-  width: 60%;
   word-wrap: break-word;
 }
 .card-body p em {
@@ -76,4 +86,77 @@
 .card-body ul li :hover {
   color: #f5b60b;
   text-decoration: none;
+}
+
+.comment-container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  text-align: right;
+}
+
+.post-container {
+  background-color: rgb(230, 230, 230);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: right;
+  width: 85%;
+  padding: 20px 12px;
+
+  border-radius: 10px;
+}
+.post-container button {
+  width: 20%;
+}
+.post-header {
+  display: grid;
+  grid-template-columns: 1fr 50px;
+  justify-content: center;
+  align-items: center;
+  text-align: right;
+}
+
+.post-header p {
+  padding-right: 10px;
+}
+.post-body {
+  padding: 20px 0px;
+}
+
+.comment {
+  width: 100%;
+  margin: 0;
+  margin: 2px 0px;
+}
+.comment-header {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment-header p {
+  padding-left: 12px;
+  padding-right: 12px;
+  text-align: left;
+}
+
+.comment-body {
+  color: grey;
+  text-align: left;
+
+  margin: 2px 0px;
+  padding-left: 2px;
+  width: 100%;
+}
+
+.user-thumb {
+  width: 50px;
+}
+
+.form-group {
+  width: 100%;
 }
