@@ -16,10 +16,11 @@ public class CommentService {
         this.commentRepository = commentRepository;
     }
 
-    public Comment updateComment(Long id, Comment comment) {
-        commentRepository.findById(id).orElseThrow(ResourceNotFoundException::new);
-        comment.setId(id);
-        return  commentRepository.save(comment);
+    public Comment updateComment(Long id, Comment updatedComment) {
+        Comment comment = commentRepository.findById(id).orElseThrow(ResourceNotFoundException::new);
+        updatedComment.setPost(comment.getPost());
+        updatedComment.setId(id);
+        return  commentRepository.save(updatedComment);
     }
 
     public void deleteComment(Long id) {
