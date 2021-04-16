@@ -15,7 +15,7 @@ export default function CommentList({postId}) {
 
     const commentsArray = comments.map((comment, index) => (
         <Comment key={index} comment={comment} /> ));
-    
+
 
 return(
 
