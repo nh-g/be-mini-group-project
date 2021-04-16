@@ -1,11 +1,28 @@
-import React from 'react'
+import React from "react";
 
-export default function Comment({comment}){
+import userthumb from "../assets/userthumb.png";
 
-    return(
-        <div>Here are comments
-            <p>{comment.body}</p>
-        </div>
-)
+export default function Comment({ comment }) {
+  return (
+    <div className="comment">
+      <div className="comment-header">
+        <img className="user-thumb" src={userthumb} />
+        <p>
+          {" "}
+          <em>Jhon Doe</em> commented :
+        </p>
+      </div>
 
+      <div className="comment-body">
+        <p>" {comment.body} "</p>
+        <button className="btn btn-danger" onClick="">
+          Delete Comment
+        </button>
+      </div>
+
+      <p className="comment-footer">
+        <hr />
+      </p>
+    </div>
+  );
 }

@@ -3,25 +3,38 @@ import CommentsAPI from "../api/CommentsAPI";
 import Comment from "./Comment";
 import CommentForm from "./CommentForm";
 
-export default function CommentList({postId}) {
-    const [comments, setComments] = useState([])
+export default function CommentList({ postId }) {
+  const [comments, setComments] = useState([]);
 
-    useEffect(() => {
-        CommentsAPI.getAllComments(postId)
-            .then(results=>results.data)
-            .then(( data ) => setComments(data))
-            .catch((err) => console.error(err));
-    }, [comments]);
+  //methods
 
-    const commentsArray = comments.map((comment, index) => (
-        <Comment key={index} comment={comment} /> ));
+  async function createComment(commentData) {
+    try {
+      const response = await CommentsAPI.createComment(commentData, postId);
+      const comment = response.data;
+      const newComments = comments.concat(comment);
 
+      setComments(newComments);
+    } catch (e) {
+      console.error(e);
+    }
+  }
 
-return(
+  useEffect(() => {
+    CommentsAPI.getAllComments(postId)
+      .then(({ data }) => setComments(data))
+      .catch((err) => console.error(err));
+  }, [setComments]);
 
-        <div>Comment List here {commentsArray}
+  const commentsArray = comments.map((comment, index) => (
+    <Comment key={index} comment={comment} />
+  ));
 
-         <CommentForm onSubmit={(commentData) => CommentsAPI.createComment(commentData, postId)} />
-        </div>
-    )
+  return (
+    <div className="comment-container">
+       xxx comments
+      {commentsArray}
+      <CommentForm onSubmit={(commentData) => createComment(commentData)} />
+    </div>
+  );
 }

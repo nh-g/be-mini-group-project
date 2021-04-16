@@ -14,11 +14,14 @@ export default function PostForm({ onSubmit }) {
   return (
     <div className="card">
       <div className="card-body">
-        <h4 className="card-title">What's on your mind?</h4>
-        <div>
+        <h4 className="card-title">Create a new post</h4>
+
+        <div className="card-content">
           <div className="form-group">
+            
             <textarea
               className="form-control"
+              placeholder = "Create a new post here"
               value={body}
               onChange={(e) => setBody(e.target.value)}
             />
