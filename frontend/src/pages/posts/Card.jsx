@@ -1,5 +1,6 @@
 import React from "react";
 
+import Comment from '../../components/Comment'
 export default function PostCard({ post, onDeleteClick }) {
   return (
     <div className="card mt-3">
@@ -9,6 +10,7 @@ export default function PostCard({ post, onDeleteClick }) {
         <button className="btn btn-danger" onClick={onDeleteClick}>
           Delete
         </button>
+        <Comment/>
       </div>
     </div>
   );
