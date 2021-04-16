@@ -2,6 +2,7 @@ import React from "react";
 
 import CommentList from '../../components/CommentList';
 export default function PostCard({ post, onDeleteClick }) {
+    //const postId = post.id
   return (
     <div className="card mt-3">
       <div className="card-body">
@@ -10,7 +11,7 @@ export default function PostCard({ post, onDeleteClick }) {
         <button className="btn btn-danger" onClick={onDeleteClick}>
           Delete Post
         </button>
-        <CommentList />
+        <CommentList postId={post.id} />
       </div>
     </div>
   );
