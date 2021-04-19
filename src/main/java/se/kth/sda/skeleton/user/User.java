@@ -9,6 +9,8 @@ import javax.validation.constraints.NotEmpty;
 @Entity
 @Table(name="account")
 public class User {
+
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -24,9 +26,13 @@ public class User {
     @Column(name = "password")
     private String password;
 
+
     @Length(min = 3, max=100, message = "Name must be between 3-100 characters")
     @Column(name = "name")
     private String name;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    List<Post> post;
 
     // Hibernate needs a default constructor to function
     public User() {}
