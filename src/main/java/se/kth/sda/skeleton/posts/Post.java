@@ -1,9 +1,8 @@
 package se.kth.sda.skeleton.posts;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import org.springframework.web.bind.annotation.*;
-
 import se.kth.sda.skeleton.comments.Comment;
 import se.kth.sda.skeleton.user.User;
 
@@ -26,12 +25,13 @@ public class Post {
     @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
     List<Comment> comments;
 
-    @ManytoOne
-    private User user;
+    @ManyToOne
     @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
     @JsonIdentityReference(alwaysAsId = true)
     @JoinColumn(nullable = false)
-    @JsonIgnore
+    //@JsonIgnore
+    private User user;
+
     // constructor:
     public Post() {
     }
@@ -63,5 +63,14 @@ public class Post {
 
     public void setComments(List<Comment> comments) {
         this.comments = comments;
+    }
+
+    public User getUser() {
+        return user;
+
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

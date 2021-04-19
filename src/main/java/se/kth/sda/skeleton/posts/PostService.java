@@ -16,10 +16,13 @@ public class PostService {
         this.postRepository = postRepository;
     }
 
+
     public Post updatePost(Long id, Post updatedPost) {
-        postRepository.findById(id).orElseThrow(ResourceNotFoundException::new);
+        Post oldPost = postRepository.findById(id).orElseThrow(ResourceNotFoundException::new);
         updatedPost.setId(id);
+        updatedPost.setUser(oldPost.getUser());
         Post post = postRepository.save(updatedPost);
+
         return post;
     }
 

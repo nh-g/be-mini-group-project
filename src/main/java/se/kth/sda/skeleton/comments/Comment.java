@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import se.kth.sda.skeleton.posts.Post;
+import se.kth.sda.skeleton.user.User;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;

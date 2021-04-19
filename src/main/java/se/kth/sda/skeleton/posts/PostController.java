@@ -35,9 +35,10 @@ public class PostController {
     public ResponseEntity<Post> createPost(@Valid @RequestBody Post post) {
         
         String email = authService.getLoggedInUserEmail();
-
         User user = userRepository.findByEmail(email);
+        post.setUser(user);
         user.getPosts().add(post);
+
 
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(postService.createPost(post));
@@ -66,12 +67,12 @@ public class PostController {
     /**
      * Update a post based on ID
      * @param id ID of the post to edit
-     * @param updatePostById new user-created body to update the post
+     * @param Post updatedPost new user-created body to update the post
      * @return HTTP ok status of updated post
      */
     @PutMapping("/{id}")
-    public ResponseEntity<Post> updatePost(@PathVariable Long id, @RequestBody Post updatePostById){
-        Post post = postService.updatePost(id, updatePostById);
+    public ResponseEntity<Post> updatePost(@PathVariable Long id, @RequestBody Post updatedPost){
+        Post post = postService.updatePost(id, updatedPost);
         return ResponseEntity.ok(post);
     }
 
