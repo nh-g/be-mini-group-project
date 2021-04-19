@@ -26,11 +26,11 @@ public class Post {
     List<Comment> comments;
 
     @ManytoOne
+    private User user;
     @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
     @JsonIdentityReference(alwaysAsId = true)
     @JoinColumn(nullable = false)
     @JsonIgnore
-    private User user;
     // constructor:
     public Post() {
     }

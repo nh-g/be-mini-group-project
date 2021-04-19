@@ -1,16 +1,16 @@
 package se.kth.sda.skeleton.user;
 
 import org.hibernate.validator.constraints.Length;
+import se.kth.sda.skeleton.posts.Post;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import java.util.List;
 
 @Entity
 @Table(name="account")
 public class User {
-
-    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -26,13 +26,15 @@ public class User {
     @Column(name = "password")
     private String password;
 
-
     @Length(min = 3, max=100, message = "Name must be between 3-100 characters")
     @Column(name = "name")
     private String name;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    List<Post> post;
+    List<Post> posts;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    List<Comment> comments;
 
     // Hibernate needs a default constructor to function
     public User() {}
@@ -43,11 +45,11 @@ public class User {
         this.name = name;
     }
 
-
     public Long getId() {
         return id;
     }
 
+    
     public void setId(Long id) {
         this.id = id;
     }
@@ -75,4 +77,20 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
+
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
+    }
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
+    }
+
 }

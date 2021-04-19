@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.*;
 import se.kth.sda.skeleton.exception.ResourceNotFoundException;
 import se.kth.sda.skeleton.posts.Post;
 import se.kth.sda.skeleton.posts.PostRepository;
+import se.kth.sda.skeleton.user.User;
+import se.kth.sda.skeleton.user.UserRepository;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -16,11 +18,13 @@ public class CommentController {
 
     PostRepository postRepository;
     CommentService commentService;
+    UserRepository userRepository;
 
     @Autowired
-    public CommentController(PostRepository postRepository, CommentService commentService) {
+    public CommentController(PostRepository postRepository, CommentService commentService, UserRepository userRepository) {
         this.postRepository = postRepository;
         this.commentService = commentService;
+        this.userRepository = userRepository;
     }
 
     /**
@@ -43,8 +47,10 @@ public class CommentController {
      * @return status of the action
      */
     @PostMapping("/posts/{postId}/comments")
-    public ResponseEntity<Comment> createComment(@PathVariable Long postId, @Valid @RequestBody Comment comment) {
+    public ResponseEntity<Comment> createComment(@PathVariable Long postId, @Valid @RequestBody Comment comment, @RequestBody String email) {
         Post post = postRepository.findById(postId).orElseThrow(ResourceNotFoundException::new);
+        User user = userRepository.findByEmail(email);
+        user.getComments().add(comment);
         comment.setPost(post);
         return ResponseEntity.status(HttpStatus.CREATED).body(commentService.createComment(comment));
     }
