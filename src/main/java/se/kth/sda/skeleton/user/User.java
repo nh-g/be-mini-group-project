@@ -6,6 +6,11 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
+import se.kth.sda.skeleton.posts.*;
+import se.kth.sda.skeleton.comments.*;
+
+import java.util.List;
+
 @Entity
 @Table(name="account")
 public class User {
@@ -32,7 +37,10 @@ public class User {
     private String name;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    List<Post> post;
+    List<Post> posts;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    List<Comment> comments;
 
     // Hibernate needs a default constructor to function
     public User() {}
@@ -74,5 +82,11 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
+    }
+    public List<Post> getPosts(){
+        return posts;
+    }
+    public List<Comment> getComments(){
+        return comments;
     }
 }
