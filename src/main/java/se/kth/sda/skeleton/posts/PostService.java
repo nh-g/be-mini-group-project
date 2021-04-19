@@ -20,7 +20,7 @@ public class PostService {
     public Post updatePost(Long id, Post updatedPost) {
         Post oldPost = postRepository.findById(id).orElseThrow(ResourceNotFoundException::new);
         updatedPost.setId(id);
-        updatedPost.setUser(oldPost.getUser());
+        updatedPost.setUser(oldPost.getUser());//connects the user
         Post post = postRepository.save(updatedPost);
 
         return post;
