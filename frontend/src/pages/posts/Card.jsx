@@ -5,7 +5,10 @@ import userthumb from "../../assets/userthumb.png";
 export default function PostCard({ post, onDeleteClick }) {
   return (
     <div>
-      <Link to={{ pathname: `/posts/${post.id}` }}>
+
+
+
+      
         <div className="card mt-3">
           <div className="card-body">
             <div className="post-container">
@@ -17,10 +20,15 @@ export default function PostCard({ post, onDeleteClick }) {
                 <img className="user-thumb" src={userthumb} />
               </div>
               <p className="post-body">{post.body}</p>
+              <Link to={{ pathname: `/posts/${post.id}` }}> see comments ...
+              </Link>
+
             </div>
-          </div>
+                
+          </div>  
+             
         </div>
-      </Link>
+  
       <button className="btn btn-danger" onClick={onDeleteClick}>
         Delete Post
       </button>
