@@ -4,8 +4,8 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-
     text-align: right;
+    margin-top: 40px;
 }
 .comment {
     width: 100%;
@@ -17,6 +17,7 @@
     grid-template-columns: 50px 1fr;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 .comment-header p {

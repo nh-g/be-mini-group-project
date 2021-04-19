@@ -12,6 +12,11 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;300;400;500;600;700&display=swap");
 
+.mt-3, .my-3 {
+  margin-top: 1rem !important;
+  margin-bottom: 18px;
+}
+
 hr {
   height: 2px;
   color: grey;
@@ -44,6 +49,7 @@ hr {
 
 .card-content {
   width: 85%;
+  margin-top: 20px;
 }
 
 .form-control textarea {
@@ -58,6 +64,7 @@ hr {
   align-items: center;
   font-family: "Montserrat Alternates", sans-serif;
   border: none;
+
 }
 .card-body p {
   word-wrap: break-word;
@@ -88,7 +95,10 @@ hr {
   color: #f5b60b;
   text-decoration: none;
 }
-
+.product-description {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
 
 
 /* comments */

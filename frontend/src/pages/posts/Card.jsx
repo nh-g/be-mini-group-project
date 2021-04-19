@@ -24,14 +24,14 @@ export default function PostCard({ post, onDeleteClick }) {
               </Link>
 
             </div>
-                
-          </div>  
-             
+            <button className="btn btn-danger" onClick={onDeleteClick}>
+              Delete Post </button>
+          </div>
+
         </div>
   
-      <button className="btn btn-danger" onClick={onDeleteClick}>
-        Delete Post
-      </button>
+
+
     </div>
   );
 }
