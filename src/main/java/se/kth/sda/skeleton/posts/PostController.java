@@ -29,16 +29,12 @@ public class PostController {
      * @return HTTP created status of post
      */
     @PostMapping("")
-    public ResponseEntity<Post> createPost(@Valid @RequestBody Post post) {
-
-        User user = userRepository.findByEmail(post.getUser().getEmail());
-        List<Post> userPosts = user.getPosts();
-        userPosts.add(post);
-
+    public ResponseEntity<Post> createPost(@Valid @RequestBody Post post , @RequestBody String email) {
+    User user = userRepository.findByEmail(email);
+    user.getPosts().add(post);
 
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(postService.createPost(post));
-
 
     }
 
