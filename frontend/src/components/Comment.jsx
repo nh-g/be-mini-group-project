@@ -9,7 +9,7 @@ export default function Comment({ comment, onDeleteClick }) {
         <img className="user-thumb" src={userthumb} />
         <p>
           {" "}
-          <em>Jhon Doe</em> commented :
+          <em>{comment.user}</em> commented :
         </p>
       </div>
 

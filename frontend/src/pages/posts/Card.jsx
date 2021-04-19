@@ -12,7 +12,7 @@ export default function PostCard({ post, onDeleteClick }) {
               <div className="post-header">
                 <p>
                   {" "}
-                  <em>Jhon Doe</em>{" "}
+                  <em>{post.user}</em>{" "}
                 </p>
                 <img className="user-thumb" src={userthumb} />
               </div>
