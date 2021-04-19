@@ -58,7 +58,7 @@ public class CommentController {
         User user = userRepository.findByEmail(email);
         user.getComments().add(comment);
 
-        comment.setUser(user);//connecting to user
+        comment.setUser(user);//making connection to user
         comment.setPost(post);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(commentService.createComment(comment));
