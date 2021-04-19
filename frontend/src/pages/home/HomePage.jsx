@@ -12,9 +12,9 @@ export default function HomePage() {
         
         <img className="logo"src={logo}/>
         <p>
-         Welcome to <em>Dumpty</em> a platform for Garbage trucks true lovers.<br/>
+         Welcome to <em>Dumpty</em> a platform for Garbage trucks' true lovers.<br/>
          Welcome to the world of upCycling.<br/>
-         Here you will find the biggest fanbase .And don't forget : <br/> 
+         Here you will find the biggest fanbase. And don't forget : <br/>
          <em>In Crap We Trust</em>
 
 
