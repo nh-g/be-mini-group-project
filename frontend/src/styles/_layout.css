@@ -92,15 +92,19 @@ hr {
 
 
 /* posts */
+.mt3{
+  margin-top: 30px;
+  padding-top: 100px;
+}
 .post-container {
-  background-color: rgb(230, 230, 230);
+  /* background-color: rgb(230, 230, 230); */
+  background-color: #f8f9fa;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: right;
   width: 85%;
   padding: 20px 12px;
-
   border-radius: 10px;
 }
 .post-container button {
@@ -167,6 +171,7 @@ hr {
 
 .user-thumb {
   width: 50px;
+  
 }
 
 .form-group {

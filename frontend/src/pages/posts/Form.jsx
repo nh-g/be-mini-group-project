@@ -1,4 +1,5 @@
 import React from "react";
+import userthumb from "../../assets/userthumb.png";
 
 export default function PostForm({ onSubmit }) {
   const [body, setBody] = React.useState("");
@@ -15,13 +16,13 @@ export default function PostForm({ onSubmit }) {
     <div className="card">
       <div className="card-body">
         <h4 className="card-title">Create a new post</h4>
-
+        <img className="user-thumb" src={userthumb} />
+        <br/>
         <div className="card-content">
           <div className="form-group">
-            
             <textarea
               className="form-control"
-              placeholder = "Create a new post here"
+              placeholder="Have something to say?"
               value={body}
               onChange={(e) => setBody(e.target.value)}
             />
