@@ -31,7 +31,7 @@ export default function App() {
           </Route>
 
           <Route path="/posts/:id">
-            <PostDetails />
+            <PostDetails/>
           </Route>
 
           <Route path="/chat">

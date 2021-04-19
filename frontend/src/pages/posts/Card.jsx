@@ -8,7 +8,7 @@ export default function PostCard({ post, onDeleteClick }) {
 console.log(post);
 return (
   <div>
-    <Link to={{ pathname: `/posts/${post.id}`, state: { post } }}>
+    <Link to={{ pathname: `/posts/${post.id}`}}>
       <div className="card mt-3">
         <div className="card-body">
           <div className="post-container">
