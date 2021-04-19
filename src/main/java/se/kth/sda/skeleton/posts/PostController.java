@@ -36,7 +36,7 @@ public class PostController {
         
         String email = authService.getLoggedInUserEmail();
 
-        User user = userRepository.findByEmail(email);
+        User user = userRepository.findByEmail(email).getName();
         user.getPosts().add(post);
 
         return ResponseEntity.status(HttpStatus.CREATED)
