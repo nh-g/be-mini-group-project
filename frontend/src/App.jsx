@@ -10,6 +10,7 @@ import HomePage from "./pages/home/HomePage";
 import PostsPage from "./pages/posts/PostsPage";
 import ChatPage from "./pages/chat/ChatPage";
 import "./styles/App.css";
+import PostDetails from "./pages/posts/PostDetails";
 
 export default function App() {
   // State
@@ -25,8 +26,12 @@ export default function App() {
 
       <div className="container mt-5">
         <Switch>
-          <Route path="/posts">
+          <Route path="/posts" exact>
             <PostsPage />
+          </Route>
+
+          <Route exact path="/posts/:id">
+            <PostDetails/>
           </Route>
 
           <Route path="/chat">
@@ -36,6 +41,9 @@ export default function App() {
           <Route path="/">
             <HomePage />
           </Route>
+
+
+
         </Switch>
       </div>
     </BrowserRouter>

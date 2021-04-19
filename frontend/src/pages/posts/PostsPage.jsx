@@ -48,7 +48,6 @@ export default function PostsPage() {
   return (
     <div>
       <Form onSubmit={(postData) => createPost(postData)} />
-     
       {CardsArray}
     </div>
   );

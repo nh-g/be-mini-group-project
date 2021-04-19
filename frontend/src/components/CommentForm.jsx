@@ -29,7 +29,7 @@ export default function CommentForm({ onSubmit }) {
 
           <div className="form-group">
             <button className="btn btn-primary" onClick={handleClick}>
-              Post
+              Comment
             </button>
           </div>
         </div>
