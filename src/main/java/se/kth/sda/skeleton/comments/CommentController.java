@@ -54,7 +54,7 @@ public class CommentController {
         Post post = postRepository.findById(postId).orElseThrow(ResourceNotFoundException::new);
         String email = authService.getLoggedInUserEmail();
         User user = userRepository.findByEmail(email);
-        userEmail.getComments().add(comment);
+        user.getComments().add(comment);
         comment.setPost(post);
         return ResponseEntity.status(HttpStatus.CREATED).body(commentService.createComment(comment));
     }
