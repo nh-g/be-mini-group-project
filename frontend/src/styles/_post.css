@@ -44,3 +44,10 @@
     padding: 20px 0px;
     color: #513C65;
 }
+.postList-title {
+    color: #D5B761;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    font-weight: 300;
+}

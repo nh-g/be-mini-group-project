@@ -48,6 +48,7 @@ export default function PostsPage() {
   return (
     <div>
       <Form onSubmit={(postData) => createPost(postData)} />
+      <h4 className="postList-title"> Hey, don't miss these craps!</h4>
       {CardsArray}
     </div>
   );
