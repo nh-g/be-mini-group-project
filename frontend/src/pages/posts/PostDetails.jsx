@@ -15,6 +15,7 @@ export default function PostDetails({ }) {
     <div>
       Hellooo post details
       <p className="product-description">{post.body}</p>
+      <CommentList postId = {post.id}/>
     </div>
   );
 }
