@@ -30,7 +30,7 @@ export default function App() {
             <PostsPage />
           </Route>
 
-          <Route path="/posts/:id">
+          <Route exact path="/posts/:id">
             <PostDetails/>
           </Route>
 

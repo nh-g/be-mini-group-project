@@ -31,6 +31,12 @@ export default function CommentList({ postId }) {
     }
   }
 
+  async function loadComments(){
+    CommentsAPI.getAllComments(postId)
+        .then(({ data }) => setComments(data))
+        .catch((err) => console.error(err));
+  }
+
   useEffect(() => {
     CommentsAPI.getAllComments(postId)
       .then(({ data }) => setComments(data))
@@ -43,7 +49,7 @@ export default function CommentList({ postId }) {
 
   return (
     <div className="comment-container">
-       xxx comments
+       here are the comments
       {commentsArray}
       <CommentForm onSubmit={(commentData) => createComment(commentData)} />
     </div>

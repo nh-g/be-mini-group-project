@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import CommentList from "../../components/CommentList";
 import PostCard from "./Card";
 import userthumb from "../../assets/userthumb.png";
@@ -11,13 +11,17 @@ export default function PostDetails() {
     const { id } = useParams();
  // const { state } = useLocation();
   //const passedPost = state === undefined ?  : state.post;
-  const [post, setPost] = useState({});
-  console.log(post)
+    const fetchedPost = PostsApi.getPostById(id);
+    const [post, setPost] = useState(null);
+    const commentsListRef=useRef();
+
 
   // useEffect
   useEffect(() => {
-    PostsApi.getPostById(id)
-      .then(({ data }) => setPost(data))
+    fetchedPost
+      .then(({ data }) => {
+          setPost(data);
+      })
       .catch((err) => console.error(err));
   }, []);
 
@@ -26,24 +30,34 @@ export default function PostDetails() {
 
   async function updatePost(updatedPost) {
     try {
-      
       await PostsApi.updatePost(post.id, updatedPost);
-      setPost(updatedPost);
+      PostsApi.getPostById(post.id)
+          .then(response=>setPost(response))
+          .catch(console.error)
+
       // const response = await PostsApi.updatePost(post.id, updatedPost);
       // setBody(response.data);
     } catch (error) {
       console.log(error);
     }
   }
-  return (
-    <div>
-      Hellooo post details
-      <p className="product-description"> {post.body}</p>
-      {/* <button onClick = {() => updatePost}>
-        Edit Post
-      </button> */}
-      <UpdatePost onSubmit={(postData) => updatePost(postData)} post={post}/>
-      <CommentList postId={post.id} />
-    </div>
+
+  return (post?
+   <div>
+      <div className="card">
+          <div className="card-body">
+              <div className="card-content">
+                  <h4 className="card-title">Post {post.id}</h4>
+                  <p className="product-description"> {post.body}</p>
+                  {/* <button onClick = {() => updatePost}>
+Edit Post
+</button> */}
+                  <UpdatePost onSubmit={(postData) => updatePost(postData)} post={post}/>
+                  <CommentList postId={id}/>
+              </div>
+          </div>
+      </div>
+  </div>:null
+
   );
 }

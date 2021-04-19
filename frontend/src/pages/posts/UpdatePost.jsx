@@ -1,12 +1,13 @@
 import React from "react";
 
 export default function UpdatePost({ onSubmit, post }) {
+  console.log(post)
   const [body, setBody] = React.useState(post.body);
 
   const handleSubmit = () => {
-  
+  //post.body = body;
     // Invoke the passed in event callback
-    onSubmit( {body: body});
+    onSubmit({body:body} );
   };
 
   return (
@@ -19,9 +20,10 @@ export default function UpdatePost({ onSubmit, post }) {
             <div className="form-group">
               <textarea
                 className="form-control"
-                placeholder="Create a new post here"
+                placeholder="Edit your post here"
                 value={body}
-                onChange={(e) => setBody(e.target.value)}
+                onChange={(e) => {setBody(e.target.value);
+                console.log(body)}}
               />
             </div>
 
