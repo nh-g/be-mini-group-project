@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import se.kth.sda.skeleton.user.User;
+import se.kth.sda.skeleton.user.UserRepository;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -12,10 +14,13 @@ import java.util.List;
 @RestController
 public class PostController {
     PostService postService;
+    UserRepository userRepository;
 
     @Autowired
-    public PostController(PostService postService) {
+
+    public PostController(PostService postService, UserRepository userRepository) {
         this.postService = postService;
+        this.userRepository = userRepository;
     }
 
     /**
@@ -25,8 +30,16 @@ public class PostController {
      */
     @PostMapping("")
     public ResponseEntity<Post> createPost(@Valid @RequestBody Post post) {
+
+        User user = userRepository.findByEmail(post.getUser().getEmail());
+        List<Post> userPosts = user.getPosts();
+        userPosts.add(post);
+
+
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(postService.createPost(post));
+
+
     }
 
     /**
