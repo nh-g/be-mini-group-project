@@ -23,7 +23,7 @@ console.log(post);
           Delete Post
         </button>
 
-              <Link to={{pathname:`/posts/${post.id}`, state: {post1: post}}}>View Details</Link>
+              <Link to={{pathname:`/posts/${post.id}`, state: {post}}}>View Details</Link>
 
         </div>
 
