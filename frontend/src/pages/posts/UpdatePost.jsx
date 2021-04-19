@@ -4,9 +4,9 @@ export default function UpdatePost({ onSubmit, post }) {
   const [body, setBody] = React.useState(post.body);
 
   const handleSubmit = () => {
-    post.body = body;
+  
     // Invoke the passed in event callback
-    onSubmit( post);
+    onSubmit( {body: body});
   };
 
   return (

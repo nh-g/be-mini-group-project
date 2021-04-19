@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CommentList from "../../components/CommentList";
 import PostCard from "./Card";
 import userthumb from "../../assets/userthumb.png";
@@ -11,17 +11,24 @@ export default function PostDetails() {
     const { id } = useParams();
  // const { state } = useLocation();
   //const passedPost = state === undefined ?  : state.post;
-  const [post, setPost] = useState({"id": 0, body:""});
+  const [post, setPost] = useState({});
+  console.log(post)
 
   // useEffect
+  useEffect(() => {
+    PostsApi.getPostById(id)
+      .then(({ data }) => setPost(data))
+      .catch((err) => console.error(err));
+  }, []);
 
-  const temp = await PostsApi.getPostById(id);
-  setPost(temp);
+//   const temp = await PostsApi.getPostById(id);
+//   setPost(temp);
 
   async function updatePost(updatedPost) {
     try {
-        setPost(updatedPost);
+      
       await PostsApi.updatePost(post.id, updatedPost);
+      setPost(updatedPost);
       // const response = await PostsApi.updatePost(post.id, updatedPost);
       // setBody(response.data);
     } catch (error) {
