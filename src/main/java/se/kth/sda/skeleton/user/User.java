@@ -33,6 +33,9 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     List<Post> posts;
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    List<Comment> comments;
+
     // Hibernate needs a default constructor to function
     public User() {}
 
@@ -42,11 +45,11 @@ public class User {
         this.name = name;
     }
 
-
     public Long getId() {
         return id;
     }
 
+    
     public void setId(Long id) {
         this.id = id;
     }
@@ -82,4 +85,12 @@ public class User {
     public void setPosts(List<Post> posts) {
         this.posts = posts;
     }
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
+    }
+
 }
