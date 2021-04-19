@@ -2,6 +2,7 @@ package se.kth.sda.skeleton.posts;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import org.springframework.web.bind.annotation.*;
 
 import se.kth.sda.skeleton.comments.Comment;
 import se.kth.sda.skeleton.user.User;
