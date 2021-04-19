@@ -5,11 +5,13 @@ import React, { useEffect, useState } from "react";
 import PostsApi from "../../api/PostsApi";
 import Form from "./Form";
 import Card from "./Card";
+import UpdatePost from "./UpdatePost";
+import userthumb from "../../assets/userthumb.png";
 
 export default function PostsPage() {
   // Local state
   const [posts, setPosts] = useState([]);
-
+  const [toggle, setToggle] = useState(false);
   // Methods
   async function createPost(postData) {
     try {
@@ -40,7 +42,9 @@ export default function PostsPage() {
       .catch((err) => console.error(err));
   }, [setPosts]);
 
-
+  function startUpdate() {
+    setToggle(true);
+  }
 
   // Components
   const CardsArray = posts.map((post) => (
@@ -48,10 +52,24 @@ export default function PostsPage() {
   ));
 
   return (
-    <div>
-      <Form onSubmit={(postData) => createPost(postData)} />
+<div>
+      <div className="card">
+        <div className="card-body">
+          <h4 className="card-title">Welcome to Dumpty Forums</h4>
+          <img className="user-thumb" src={userthumb} />
+          <br/>
+          <div className="card-content">
+            <div className="form-group">
+      <button className="btn-post" onClick={startUpdate}>Create Post</button>
+      {toggle ? (<Form onSubmit={(postData) => createPost(postData)} />
+
+      ) : null}
+            </div>
+          </div>
+        </div>
+      </div>
       <h4 className="postList-title"> Hey, don't miss these craps!</h4>
       {CardsArray}
-    </div>
+</div>
   );
 }

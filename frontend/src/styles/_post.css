@@ -16,6 +16,12 @@
     border: 2px solid #D5B761;
     color: white;
 }
+.btn-primary:not(:disabled):not(.disabled):active{
+    background-color: #513C65 !important;
+    border: 2px solid #D5B761;
+    color: white;
+    transition: none !important;
+}
 
 .post-container {
     /* background-color: rgb(230, 230, 230); */
