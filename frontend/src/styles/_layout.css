@@ -61,6 +61,7 @@ hr {
 }
 .card-body p {
   word-wrap: break-word;
+  text-align: justify;
 }
 .card-body p em {
   font-weight: 600;
