@@ -40,7 +40,7 @@ export default function PostDetails() {
       <div className="card">
         <div className="card-body">
           <div className="card-content">
-            <h4 className="card-title">{post.user} posted :</h4>
+            <h4 className="card-title"><b>{post.user}</b> posted :</h4>
             <p className="product-description"> {post.body}</p>
             <button className="btn-post" onClick={startUpdate}>Edit Post</button>
             {toggle ? (
@@ -49,6 +49,7 @@ export default function PostDetails() {
                 post={post}
               />
             ) : null}
+            <hr />
             <CommentList postId={id} />
 
           </div>

@@ -21,7 +21,7 @@ export default function PostForm({ onSubmit }) {
             
             <textarea
               className="form-control"
-              placeholder = "Create a new post here"
+              placeholder = "Type your new post here"
               value={body}
               onChange={(e) => setBody(e.target.value)}
             />
