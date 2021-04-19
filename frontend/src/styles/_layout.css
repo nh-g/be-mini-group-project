@@ -75,7 +75,7 @@ hr {
 .card-body ul li {
   margin: 0px 10px;
 
-  background-color: #513c65;
+  background-color: #111011;
   list-style-type: none;
   border-radius: 20px;
 }
@@ -91,39 +91,6 @@ hr {
 
 
 
-/* posts */
-.mt3{
-  margin-top: 30px;
-  padding-top: 100px;
-}
-.post-container {
-  /* background-color: rgb(230, 230, 230); */
-  background-color: #f8f9fa;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: right;
-  width: 85%;
-  padding: 20px 12px;
-  border-radius: 10px;
-}
-.post-container button {
-  width: 20%;
-}
-.post-header {
-  display: grid;
-  grid-template-columns: 1fr 50px;
-  justify-content: center;
-  align-items: center;
-  text-align: right;
-}
-
-.post-header p {
-  padding-right: 10px;
-}
-.post-body {
-  padding: 20px 0px;
-}
 
 
 /* comments */
