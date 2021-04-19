@@ -1,13 +1,10 @@
 import React from "react";
 
 export default function UpdatePost({ onSubmit, post }) {
-  console.log(post)
   const [body, setBody] = React.useState(post.body);
 
   const handleSubmit = () => {
-  //post.body = body;
-    // Invoke the passed in event callback
-    onSubmit({body:body} );
+    onSubmit({ body: body });
   };
 
   return (
@@ -22,14 +19,16 @@ export default function UpdatePost({ onSubmit, post }) {
                 className="form-control"
                 placeholder="Edit your post here"
                 value={body}
-                onChange={(e) => {setBody(e.target.value);
-                console.log(body)}}
+                onChange={(e) => {
+                  setBody(e.target.value);
+                  console.log(body);
+                }}
               />
             </div>
 
             <div className="form-group">
               <button className="btn btn-primary" onClick={handleSubmit}>
-                Edit
+                Submit
               </button>
             </div>
           </div>
