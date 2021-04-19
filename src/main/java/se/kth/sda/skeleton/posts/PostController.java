@@ -5,6 +5,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import se.kth.sda.skeleton.auth.AuthService;
+import se.kth.sda.skeleton.user.User;
+import se.kth.sda.skeleton.user.UserRepository;
+
 import javax.validation.Valid;
 import java.util.List;
 
@@ -12,10 +16,14 @@ import java.util.List;
 @RestController
 public class PostController {
     PostService postService;
+    UserRepository userRepository;
+    AuthService authService;
 
     @Autowired
-    public PostController(PostService postService) {
+    public PostController(PostService postService, UserRepository userRepository, AuthService authService) {
         this.postService = postService;
+        this.userRepository = userRepository;
+        this.authService = authService;
     }
 
     /**
@@ -25,6 +33,13 @@ public class PostController {
      */
     @PostMapping("")
     public ResponseEntity<Post> createPost(@Valid @RequestBody Post post) {
+        
+        String email = authService.getLoggedInUserEmail();
+        User user = userRepository.findByEmail(email);
+        post.setUser(user);
+        user.getPosts().add(post);
+
+
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(postService.createPost(post));
     }
@@ -52,12 +67,12 @@ public class PostController {
     /**
      * Update a post based on ID
      * @param id ID of the post to edit
-     * @param updatePostById new user-created body to update the post
+     * @param Post updatedPost new user-created body to update the post
      * @return HTTP ok status of updated post
      */
     @PutMapping("/{id}")
-    public ResponseEntity<Post> updatePost(@PathVariable Long id, @RequestBody Post updatePostById){
-        Post post = postService.updatePost(id, updatePostById);
+    public ResponseEntity<Post> updatePost(@PathVariable Long id, @RequestBody Post updatedPost){
+        Post post = postService.updatePost(id, updatedPost);
         return ResponseEntity.ok(post);
     }
 

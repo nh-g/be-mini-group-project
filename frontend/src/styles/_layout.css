@@ -122,7 +122,7 @@ hr {
 
 .comment-body {
   display: grid;
-  grid-template-columns: 1fr 20%;
+  grid-template-columns: 1fr 200px;
   color: grey;
   text-align: left;
   

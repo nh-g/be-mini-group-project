@@ -49,7 +49,9 @@ export default function CommentList({ postId }) {
 
   return (
     <div className="comment-container">
-       here are the comments
+
+       {commentsArray.length } comment(s)
+
       {commentsArray}
       <CommentForm onSubmit={(commentData) => createComment(commentData)} />
     </div>
