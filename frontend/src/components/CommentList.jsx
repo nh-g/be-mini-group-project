@@ -20,6 +20,17 @@ export default function CommentList({ postId }) {
     }
   }
 
+  async function deleteComment(comment) {
+    try {
+      await CommentsAPI.deleteComment(comment.id);
+      const newComments = comments.filter((c) => c.id !== comment.id);
+
+      setComments(newComments);
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
   useEffect(() => {
     CommentsAPI.getAllComments(postId)
       .then(({ data }) => setComments(data))
@@ -27,7 +38,7 @@ export default function CommentList({ postId }) {
   }, [setComments]);
 
   const commentsArray = comments.map((comment, index) => (
-    <Comment key={index} comment={comment} />
+    <Comment key={index} comment={comment} onDeleteClick={() => deleteComment(comment)}/>
   ));
 
   return (

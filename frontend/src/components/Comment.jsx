@@ -2,7 +2,7 @@ import React from "react";
 
 import userthumb from "../assets/userthumb.png";
 
-export default function Comment({ comment }) {
+export default function Comment({ comment, onDeleteClick }) {
   return (
     <div className="comment">
       <div className="comment-header">
@@ -15,7 +15,7 @@ export default function Comment({ comment }) {
 
       <div className="comment-body">
         <p>" {comment.body} "</p>
-        <button className="btn btn-danger" onClick="">
+        <button className="btn btn-danger" onClick={onDeleteClick}>
           Delete Comment
         </button>
       </div>
