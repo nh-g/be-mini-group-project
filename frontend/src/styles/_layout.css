@@ -61,6 +61,7 @@ hr {
 }
 .card-body p {
   word-wrap: break-word;
+  text-align: justify;
 }
 .card-body p em {
   font-weight: 600;
@@ -74,7 +75,7 @@ hr {
 .card-body ul li {
   margin: 0px 10px;
 
-  background-color: #513c65;
+  background-color: #111011;
   list-style-type: none;
   border-radius: 20px;
 }
@@ -90,84 +91,8 @@ hr {
 
 
 
-/* posts */
-.post-container {
-  background-color: rgb(230, 230, 230);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: right;
-  width: 85%;
-  padding: 20px 12px;
-
-  border-radius: 10px;
-}
-.post-container button {
-  width: 20%;
-}
-.post-header {
-  display: grid;
-  grid-template-columns: 1fr 50px;
-  justify-content: center;
-  align-items: center;
-  text-align: right;
-}
-
-.post-header p {
-  padding-right: 10px;
-}
-.post-body {
-  padding: 20px 0px;
-}
-
-
 /* comments */
-.comment-container {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-
-  text-align: right;
-}
-.comment {
-  width: 100%;
-  margin: 0;
-  margin: 2px 0px;
-}
-.comment-header {
-  display: grid;
-  grid-template-columns: 50px 1fr;
-  justify-content: center;
-  align-items: center;
-}
-
-.comment-header p {
-  padding-left: 12px;
-  padding-right: 12px;
-  text-align: left;
-}
-
-.comment-body {
-  display: grid;
-  grid-template-columns: 1fr 200px;
-  color: grey;
-  text-align: left;
-  
-
-  margin: 2px 0px;
-  padding-left: 2px;
-  width: 100%;
-}
+/*
 .comment-body button{
   font-size: 0.8em;
-}
-
-
-.user-thumb {
-  width: 50px;
-}
-
-.form-group {
-  width: 100%;
-}
+}*/

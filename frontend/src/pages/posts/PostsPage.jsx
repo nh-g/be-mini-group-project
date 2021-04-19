@@ -40,6 +40,8 @@ export default function PostsPage() {
       .catch((err) => console.error(err));
   }, [setPosts]);
 
+
+
   // Components
   const CardsArray = posts.map((post) => (
     <Card key={post.id} post={post} onDeleteClick={() => deletePost(post)} />
@@ -48,6 +50,7 @@ export default function PostsPage() {
   return (
     <div>
       <Form onSubmit={(postData) => createPost(postData)} />
+      <h4 className="postList-title"> Hey, don't miss these craps!</h4>
       {CardsArray}
     </div>
   );

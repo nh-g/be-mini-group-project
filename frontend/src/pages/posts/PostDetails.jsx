@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import CommentList from "../../components/CommentList";
 import PostsApi from "../../api/PostsApi";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import UpdatePost from "./UpdatePost";
 
 //This should show the post, show the comments, and provide ability to update
@@ -50,7 +50,11 @@ export default function PostDetails() {
               />
             ) : null}
             <CommentList postId={id} />
+
           </div>
+          <Link className="back-to-list" exact to="/posts">
+            ⬅ Back to all posts
+          </Link>
         </div>
       </div>
     </div>
