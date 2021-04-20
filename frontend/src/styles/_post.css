@@ -18,9 +18,12 @@
 }
 .btn-primary:not(:disabled):not(.disabled):active{
     background-color: #513C65 !important;
-    border: 2px solid #D5B761;
-    color: white;
+    border: 2px solid #D5B761 !important;
+    color: white !important;
     transition: none !important;
+}
+.btn-primary:hover {
+    background-color: #513C65 !important;
 }
 
 .post-container {
