@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import CommentList from "../../components/CommentList";
 import PostsApi from "../../api/PostsApi";
+<<<<<<< HEAD
 import { useParams, Link} from "react-router-dom";
+=======
+import { useParams, Link } from "react-router-dom";
+>>>>>>> d9df4aee48341444bdb7e6cc1b4dd1b564714032
 import UpdatePost from "./UpdatePost";
 
 //This should show the post, show the comments, and provide ability to update
@@ -40,16 +44,18 @@ export default function PostDetails() {
       <div className="card">
         <div className="card-body">
           <div className="card-content">
-            <h4 className="card-title">{post.user} posted :</h4>
+            <h4 className="card-title"><b>{post.user}</b> posted :</h4>
             <p className="product-description"> {post.body}</p>
-            <button onClick={startUpdate}>Edit Post</button>
+            <button className="btn-post" onClick={startUpdate}>Edit Post</button>
             {toggle ? (
               <UpdatePost
                 onSubmit={(postData) => updatePost(postData)}
                 post={post}
               />
             ) : null}
+            <hr />
             <CommentList postId={id} />
+
           </div>
           <Link className="back-to-list" exact to="/posts">
             ⬅ Back to all posts

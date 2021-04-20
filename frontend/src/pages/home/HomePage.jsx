@@ -11,12 +11,21 @@ export default function HomePage() {
       <div className="card-body">
         <img className="logo" src={logo} />
         <p>
+<<<<<<< HEAD
           Welcome to <em>Dumpty</em> a platform for Garbage Trucks true lovers.
           <br />
           <br />
           Here you will find the biggest fanbase. <br />
           And don't forget : <br />
           <em>In Crap We Trust</em>
+=======
+         Welcome to <em>Dumpty</em> a platform for Garbage trucks' true lovers.<br/>
+         Welcome to the world of upCycling.<br/>
+         Here you will find the biggest fanbase. And don't forget : <br/>
+         <em>In Crap We Trust</em>
+
+
+>>>>>>> d9df4aee48341444bdb7e6cc1b4dd1b564714032
         </p>
         <ul>
           <li>

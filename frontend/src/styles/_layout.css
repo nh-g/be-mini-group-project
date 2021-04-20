@@ -12,6 +12,11 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;300;400;500;600;700&display=swap");
 
+.mt-3, .my-3 {
+  margin-top: 1rem !important;
+  margin-bottom: 18px;
+}
+
 hr {
   height: 2px;
   color: grey;
@@ -44,6 +49,7 @@ hr {
 
 .card-content {
   width: 85%;
+  margin-top: 20px;
 }
 
 .form-control textarea {
@@ -58,6 +64,7 @@ hr {
   align-items: center;
   font-family: "Montserrat Alternates", sans-serif;
   border: none;
+
 }
 .card-body p {
   word-wrap: break-word;
@@ -88,51 +95,23 @@ hr {
   color: #f5b60b;
   text-decoration: none;
 }
+<<<<<<< HEAD
 
 
 
+=======
+.product-description {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+>>>>>>> d9df4aee48341444bdb7e6cc1b4dd1b564714032
 
 
 /* comments */
-.comment-container {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-
-  text-align: right;
-}
-.comment {
-  width: 100%;
-  margin: 0;
-  margin: 2px 0px;
-}
-.comment-header {
-  display: grid;
-  grid-template-columns: 50px 1fr;
-  justify-content: center;
-  align-items: center;
-}
-
-.comment-header p {
-  padding-left: 12px;
-  padding-right: 12px;
-  text-align: left;
-}
-
-.comment-body {
-  display: grid;
-  grid-template-columns: 1fr 200px;
-  color: grey;
-  text-align: left;
-  
-
-  margin: 2px 0px;
-  padding-left: 2px;
-  width: 100%;
-}
+/*
 .comment-body button{
   font-size: 0.8em;
+<<<<<<< HEAD
 }
 
 
@@ -144,3 +123,6 @@ hr {
 .form-group {
   width: 100%;
 }
+=======
+}*/
+>>>>>>> d9df4aee48341444bdb7e6cc1b4dd1b564714032
