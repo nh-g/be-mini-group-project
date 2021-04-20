@@ -3,24 +3,13 @@
     border-radius: 10px;
     background-color: #f8f9fa;
 }
-<<<<<<< HEAD
-=======
-.btn-post {
-    background-color: #513C65;
-    border: 2px solid #D5B761;
-    color: white;
-    padding: 0.375rem 0.75rem;
-    border-radius: 0.25rem;
-}
->>>>>>> d9df4aee48341444bdb7e6cc1b4dd1b564714032
 
 .form-group .btn-primary {
     background-color: #513C65;
     border: 2px solid #D5B761;
     color: white;
 }
-<<<<<<< HEAD
-=======
+
 .btn-primary:not(:disabled):not(.disabled):active{
     background-color: #513C65 !important;
     border: 2px solid #D5B761 !important;
@@ -30,7 +19,6 @@
 .btn-primary:hover {
     background-color: #513C65 !important;
 }
->>>>>>> d9df4aee48341444bdb7e6cc1b4dd1b564714032
 
 .post-container {
     /* background-color: rgb(230, 230, 230); */

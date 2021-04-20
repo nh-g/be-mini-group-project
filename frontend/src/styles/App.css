@@ -1,11 +1,6 @@
 @import url("_layout.css"); 
-<<<<<<< HEAD
-@import url("_post.css");
-
-=======
 @import url("_comment.css");
 @import url("_post.css");
->>>>>>> d9df4aee48341444bdb7e6cc1b4dd1b564714032
 
 body {
   min-height: 100vh;

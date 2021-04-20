@@ -1,58 +1,5 @@
 /* comments */
 .comment-container {
-<<<<<<< HEAD
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-
-  text-align: right;
-}
-.comment {
-  width: 100%;
-  margin: 0;
-  margin: 2px 0px;
-}
-.comment-header {
-  display: grid;
-  grid-template-columns: 50px 1fr;
-  justify-content: center;
-  align-items: center;
-}
-
-.comment-header p {
-  padding-left: 12px;
-  padding-right: 12px;
-  text-align: left;
-}
-
-.comment-body {
-  display: grid;
-  grid-template-columns: 1fr 20%;
-  color: grey;
-  text-align: left;
-  
-
-  margin: 2px 0px;
-  padding-left: 2px;
-  width: 100%;
-}
-.comment-body button{
-  font-size: 0.8em;
-  width: 20%;
-}
-.comment-body .btn-danger{
-    width: 20%;
-}
-
-.user-thumb {
-  width: 50px;
-  
-}
-
-.form-group {
-  width: 100%;
-=======
     width: 80%;
     display: flex;
     flex-direction: column;
@@ -106,7 +53,6 @@
 
 .form-group {
     width: 100%;
->>>>>>> d9df4aee48341444bdb7e6cc1b4dd1b564714032
 }
 .post-container button {
     width: 20%;
